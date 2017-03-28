@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Mika Vormisto">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React / Color toggler</title>
+  <!-- React -->
+  <script src="https://facebook.github.io/react/js/jsfiddle-integration-babel.js"></script>
+  <style type="text/css">
+    #myDiv > div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="myDiv">
+    <!-- Content will be inserted here -->
+  </div>
+
+  <script type="text/babel">
+
+    // Define the color variables
+
+    var primaryColor = 'red';
+    var secondaryColor = 'green';
+
+    var MySquare = React.createClass({
+
+      // Set the initial state of the component
+      getInitialState: function() {
+        return {
+          bgColor: primaryColor
+        }
+      },
+
+      // Function, that get's called when the square is clicked.
+      handleClick: function() {
+
+        // Check what color the box is, and adjust it accordingly
+        if (this.state.bgColor === primaryColor) {
+          this.setState({
+            bgColor: secondaryColor
+          })
+        } else {
+          this.setState({
+            bgColor: primaryColor
+          })
+        }
+      },
+
+      render: function() {
+        return (
+          <div onClick={this.handleClick} style={ { backgroundColor:this.state.bgColor } }>
+          </div>
+        );
+      }
+    });
+    
+    ReactDOM.render(
+      <MySquare />
+      , document.getElementById('myDiv'));
+
+  </script>
+  
+</body>
+</html>

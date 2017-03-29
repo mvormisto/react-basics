@@ -4,6 +4,9 @@ The beginning of my ReactJS journey.
 ## Synopsis
 A very simple page, where the square color changes when you click it. It toggles between two colors.
 
+## Demonstration
+You can try it out by [clicking here](https://mvormisto.github.io/react-basics/ToggleColor.html).
+
 ## Motivation
 The reason this repository exists is because I want to learn ReactJS. I know it is such a popular framework nowadays. I'm very excited to learn more ReactJS and this little project was a good way for me to start. 
 
